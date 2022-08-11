@@ -30,3 +30,6 @@ class Actions:
 
     def terminal_kill_all():
         """kills the running command"""
+
+    def fuzzy_open(text: str):
+        """Opens a file using a fuzzy subsequence"""

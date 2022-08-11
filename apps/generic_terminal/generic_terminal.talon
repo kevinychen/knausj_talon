@@ -14,6 +14,9 @@ run last: user.terminal_run_last()
 rerun [<user.text>]: user.terminal_rerun_search(text or "")
 rerun search: user.terminal_rerun_search("")
 kill all: user.terminal_kill_all()
+fuzzy open [<user.text>]: user.fuzzy_open(text or "")
+figgy: insert("fg\n")
+powod: insert("pwd\n")
 
 copy paste:
     edit.copy()

@@ -38,7 +38,7 @@ fix (format | formatting): user.idea("action ReformatCode")
 fix imports: user.idea("action OptimizeImports")
 #navigation
 (go declaration | follow): user.idea("action GotoDeclaration")
-go implementation: user.idea("action GotoImplementation")
+go impull: user.idea("action GotoImplementation")
 go usage: user.idea("action FindUsages")
 go type: user.idea("action GotoTypeDeclaration")
 go test: user.idea("action GotoTest")
@@ -250,3 +250,6 @@ go camel right: user.camel_right()
 
 # requires plug-in: black-pycharm
 blacken: user.idea("action BLACKReformatCode")
+
+# https://centic9.github.io/IntelliJ-Action-IDs/
+close all to the right: user.idea("action CloseAllToTheRight")

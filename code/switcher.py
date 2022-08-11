@@ -260,6 +260,22 @@ class Actions:
         app = actions.user.get_running_app(name)
         actions.user.switcher_focus_app(app)
 
+    def switcher_focus_chrome_private():
+        """Focus the chrome private window"""
+        app = actions.user.get_running_app('chrome')
+        for window in app.windows():
+            if window.title.endswith(' (Incognito)'):
+                actions.user.switcher_focus_window(window)
+                return
+
+    def switcher_focus_chrome_not_private():
+        """Focus the chrome non-private window"""
+        app = actions.user.get_running_app('chrome')
+        for window in app.windows():
+            if not window.title.endswith(' (Incognito)'):
+                actions.user.switcher_focus_window(window)
+                return
+
     def switcher_focus_app(app: ui.App):
         """Focus application and wait until switch is made"""
         app.focus()

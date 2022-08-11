@@ -1,6 +1,7 @@
 # https://help.github.com/en/github/getting-started-with-github/keyboard-shortcuts
 tag: browser
 browser.host: github.com
+browser.host: github.palantir.build
 -
 
 # site wide shortcuts

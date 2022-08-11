@@ -1,6 +1,6 @@
 from talon import Context, Module, actions, app
 
-default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
+default_alphabet = "air bat cap drum each fin gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
@@ -109,14 +109,13 @@ def letters(m) -> str:
 
 ctx = Context()
 modifier_keys = {
-    # If you find 'alt' is often misrecognized, try using 'alter'.
-    "alt": "alt",  #'alter': 'alt',
-    "control": "ctrl",  #'troll':   'ctrl',
-    "shift": "shift",  #'sky':     'shift',
+    "alter": "alt",
+    "con": "ctrl",
+    "sky": "shift",
     "super": "super",
 }
 if app.platform == "mac":
-    modifier_keys["command"] = "cmd"
+    modifier_keys["man"] = "cmd"
     modifier_keys["option"] = "alt"
 ctx.lists["self.modifier_key"] = modifier_keys
 alphabet = dict(zip(default_alphabet, letters_string))
@@ -134,7 +133,7 @@ punctuation_words = {
     "comma": ",",
     "period": ".",
     "full stop": ".",
-    "semicolon": ";",
+    "semi": ";",
     "colon": ":",
     "forward slash": "/",
     "question mark": "?",
@@ -157,11 +156,9 @@ symbol_key_words = {
     "quote": "'",
     "question": "?",
     "apostrophe": "'",
-    "L square": "[",
-    "left square": "[",
     "square": "[",
     "R square": "]",
-    "right square": "]",
+    "ending square": "]",
     "slash": "/",
     "backslash": "\\",
     "minus": "-",
@@ -169,30 +166,20 @@ symbol_key_words = {
     "equals": "=",
     "plus": "+",
     "tilde": "~",
+    "squiggle": "~",
     "bang": "!",
     "down score": "_",
     "underscore": "_",
     "paren": "(",
-    "L paren": "(",
-    "left paren": "(",
     "R paren": ")",
-    "right paren": ")",
-    "brace": "{",
-    "left brace": "{",
+    "ending paren": ")",
     "brack": "{",
-    "bracket": "{",
-    "left bracket": "{",
-    "r brace": "}",
-    "right brace": "}",
     "r brack": "}",
-    "r bracket": "}",
-    "right bracket": "}",
+    "ending brack": "}",
     "angle": "<",
-    "left angle": "<",
-    "less than": "<",
     "rangle": ">",
     "R angle": ">",
-    "right angle": ">",
+    "ending angle": ">",
     "greater than": ">",
     "star": "*",
     "hash": "#",
@@ -223,7 +210,7 @@ simple_keys = [
     "end",
     "enter",
     "escape",
-    "home",
+#    "home",
     "insert",
     "pagedown",
     "pageup",
@@ -232,12 +219,13 @@ simple_keys = [
 ]
 
 alternate_keys = {
-    "wipe": "backspace",
-    "delete": "backspace",
-    #'junk': 'backspace',
-    "forward delete": "delete",
+    "junk": "backspace",
+    "chomp": "delete",
+    "shock": "enter",
     "page up": "pageup",
     "page down": "pagedown",
+    "bar": "space",
+    "nope": "escape",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):

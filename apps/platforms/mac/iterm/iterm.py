@@ -83,3 +83,9 @@ class user_actions:
         actions.key("ctrl-c")
         actions.insert("y")
         actions.key("enter")
+
+    def fuzzy_open(text: str):
+        actions.insert("v ")
+        actions.key("ctrl-t")
+        if text:
+            actions.insert(text)

@@ -1,15 +1,25 @@
-mouse grid:
+touch <user.number_key>:
     user.grid_select_screen(1)
     user.grid_activate()
+    user.grid_narrow(number_key)
+    mouse_click(0)
+    user.grid_close()
 
-grid win:
-    user.grid_place_window()
+big touch <user.number_key>:
+    user.grid_select_screen(2)
     user.grid_activate()
+    user.grid_narrow(number_key)
+    mouse_click(0)
+    user.grid_close()
 
-grid <user.number_key>+:
+mousy <user.number_key>:
+    user.grid_select_screen(1)
     user.grid_activate()
-    user.grid_narrow_list(number_key_list)
+    user.grid_narrow(number_key)
+    user.grid_close()
 
-grid screen [<number>]:
-    user.grid_select_screen(number or 1)
+big mousy <user.number_key>:
+    user.grid_select_screen(2)
     user.grid_activate()
+    user.grid_narrow(number_key)
+    user.grid_close()
